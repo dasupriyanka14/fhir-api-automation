@@ -1,0 +1,28 @@
+{
+  "name": "fhir-api-automation",
+  "version": "1.0.0",
+  "description": "Playwright-based FHIR API automation test framework",
+  "main": "index.js",
+  "scripts": {
+    "test": "playwright test",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "test:ui": "playwright test --ui",
+    "test:smoke": "playwright test --grep @smoke",
+    "test:regression": "playwright test --grep @regression",
+    "test:e2e": "playwright test --grep @e2e",
+    "report": "playwright show-report"
+  },
+  "keywords": ["playwright", "fhir", "api", "automation", "testing"],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "@playwright/test": "^1.58.2",
+    "@types/node": "^25.2.3"
+  },
+  "dependencies": {
+    "ajv": "^8.17.1",
+    "dotenv": "^17.3.1"
+  }
+}
