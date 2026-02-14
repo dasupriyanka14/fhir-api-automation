@@ -1,0 +1,17 @@
+{
+  "type": "object",
+  "required": ["resourceType", "id"],
+  "properties": {
+    "resourceType": { "type": "string" },
+    "id": { "type": "string" },
+    "name": {
+      "type": "array"
+    },
+    "gender": {
+      "type": "string"
+    },
+    "birthDate": {
+      "type": "string"
+    }
+  }
+}

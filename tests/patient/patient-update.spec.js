@@ -1,5 +1,5 @@
-const { test, expect } = require('../fixtures/test-fixture');
-const { generatePatient } = require('../test-data/patientData');
+const { test, expect } = require('../../fixtures/test-fixture');
+const { generatePatient } = require('../../test-data/patientData');
 
 test('@regression @patient Patient - Update', async ({ api }) => {
     

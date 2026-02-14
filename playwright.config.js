@@ -1,12 +1,33 @@
-require('dotenv').config({ quiet: true });
+require('dotenv').config();
+const path = require('path');
 
-const { defineConfig } = require('@playwright/test');
+function getBaseUrl() {
+  const env = process.env.ENV || 'QA';
 
-module.exports = defineConfig({
+  switch (env) {
+    case 'QA':
+      return process.env.QA_URL;
+    case 'UAT':
+      return process.env.UAT_URL;
+    case 'PROD':
+      return process.env.PROD_URL;
+    default:
+      return process.env.QA_URL;
+  }
+}
+
+/** @type {import('@playwright/test').PlaywrightTestConfig} */
+const config = {
   testDir: './tests',
 
+  timeout: 60000,
+
+  expect: {
+    timeout: 5000
+  },
+
   use: {
-    baseURL: process.env.BASE_URL,
+    baseURL: getBaseUrl(),
     extraHTTPHeaders: {
       'Content-Type': 'application/fhir+json'
     }
@@ -14,10 +35,17 @@ module.exports = defineConfig({
 
   reporter: [
     ['list'],
-    ['html']
-  ]
-});
+    ['html', { open: 'never' }],
+    ['allure-playwright']
+  ],
 
+  resolve: {
+    alias: {
+      fixtures: path.resolve(__dirname, './fixtures'),
+      utils: path.resolve(__dirname, './utils'),
+      testdata: path.resolve(__dirname, './test-data')
+    }
+  }
+};
 
-
-
+module.exports = config;

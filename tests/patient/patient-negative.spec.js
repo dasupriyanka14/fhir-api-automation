@@ -1,4 +1,4 @@
-const { test, expect } = require('../fixtures/test-fixture');
+const { test, expect } = require('../../fixtures/test-fixture');
 
 test.describe('Negative Scenarios - Patient API', () => {
 
