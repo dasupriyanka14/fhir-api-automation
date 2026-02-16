@@ -1,78 +1,71 @@
-#  FHIR API Automation Framework – Playwright
+#  FHIR API Automation Framework – Playwright + BDD
 
-A production-ready **Healthcare API Automation Framework** built using **Playwright + JavaScript** to validate FHIR-compliant healthcare systems.
-This project demonstrates scalable, maintainable, and real-world test automation aligned with enterprise healthcare workflows.
-
----
-
-##  Key Features
-
-*  End-to-end healthcare workflow automation
-*  FHIR-compliant API testing
-*  Modular and scalable architecture
-*  Custom API client with logging
-*  Environment-based execution (QA / UAT / PROD)
-*  Test tagging (Smoke, Regression, E2E)
-*  Schema validation using AJV
-*  Allure reporting with request/response attachments
-*  Docker execution support
-*  CI/CD integration with GitHub Actions
+A **production-ready Healthcare API Automation Framework** built using **Playwright, JavaScript, and Cucumber (BDD)** to validate FHIR-compliant healthcare systems.
+This project demonstrates **enterprise-level automation, real-world healthcare workflows, and modern DevOps practices**.
 
 ---
 
-##  Project Structure
+##  Key Highlights
 
-```
-fhir-api-automation/
-│
-├── tests/
-│   ├── patient/
-│   ├── appointment/
-│   ├── allergy/
-│   ├── condition/
-│   ├── medication/
-│   ├── immunization/
-│   ├── observation/
-│   └── e2e/
-│
-├── fixtures/
-├── utils/
-├── test-data/
-├── .github/workflows/
-├── Dockerfile
-└── playwright.config.js
-```
+✔ End-to-end healthcare workflow automation
+✔ FHIR-compliant API validation
+✔ Hybrid framework: Playwright + Cucumber (BDD)
+✔ Modular, scalable, and maintainable architecture
+✔ Custom reusable API client with logging & retry
+✔ Schema validation using AJV
+✔ Tag-based and parallel execution
+✔ Environment-based testing (QA / UAT / PROD)
+✔ Allure reporting with request & response attachments
+✔ Dockerized execution
+✔ CI/CD integration with GitHub Actions
 
 ---
 
-##  Healthcare Modules Covered
+##  Healthcare Workflows Covered
 
-This framework automates critical healthcare workflows:
+This framework automates critical real-world healthcare modules:
 
-* Patient Management
-* Appointment Scheduling
-* Allergy & Condition Tracking
-* Medication & Immunization
-* Coverage & Insurance
-* Observation & Vital Signs
-* Full Visit Lifecycle (E2E)
+• Patient Management
+• Appointment Scheduling
+• Allergy & Condition Tracking
+• Medication & Immunization
+• Coverage & Insurance
+• Observation & Vital Signs
+• Full Visit Lifecycle (End-to-End)
 
 ---
 
-##  Installation
+##  Automation + BDD Strategy
+
+This project combines:
+
+• **Robust API Automation using Playwright**
+• **Business-driven test scenarios using Cucumber (BDD)**
+
+Supports:
+• Parallel execution
+• Tag-based runs (@smoke, @regression, @e2e)
+• Clean reusable step definitions
+• Scalable test design
+
+---
+
+##  Quick Setup
 
 ```bash
 npm install
 ```
 
----
-
-##  Run Tests
-
-Run all tests:
+Run all Playwright tests:
 
 ```bash
 npm test
+```
+
+Run BDD scenarios:
+
+```bash
+npm run test:bdd
 ```
 
 Run regression suite:
@@ -81,28 +74,17 @@ Run regression suite:
 npm run test:regression
 ```
 
-Run smoke suite:
-
-```bash
-npm run test:smoke
-```
-
-Run E2E workflow:
-
-```bash
-npm run test:e2e
-```
-
 ---
 
-##  Environment Execution
+##  Environment Configuration
 
-Supports multiple environments using `.env`:
+Supports multi-environment execution via `.env`:
 
 ```bash
-npm run test:uat
-npm run test:prod
+ENV=QA | UAT | PROD
 ```
+
+This enables seamless testing across different healthcare environments.
 
 ---
 
@@ -115,16 +97,16 @@ npx allure serve
 ```
 
 Includes:
-
-* Request & response attachments
-* Test execution insights
-* Failure analysis
+• Request & response logs
+• Failure debugging
+• Execution insights
+• Rich visual dashboards
 
 ---
 
-##  Docker Execution
+##  Docker Support
 
-Run framework inside Docker:
+Run the framework inside Docker:
 
 ```bash
 docker build -t fhir-playwright .
@@ -135,34 +117,35 @@ docker run --env-file .env fhir-playwright
 
 ##  CI/CD Integration
 
-GitHub Actions pipeline automatically runs tests on:
+Automated execution using GitHub Actions:
 
-* Pull requests
-* Code commits
-* Continuous validation
+• Runs on commits and pull requests
+• Continuous healthcare validation
+• DevOps-ready automation pipeline
 
 ---
 
 ##  Tech Stack
 
-* Playwright
-* JavaScript (Node.js)
-* FHIR Healthcare Standard
-* AJV Schema Validation
-* Allure Reporting
-* Docker
-* GitHub Actions
+• Playwright
+• JavaScript (Node.js)
+• Cucumber (BDD)
+• FHIR Healthcare Standard
+• AJV Schema Validation
+• Allure Reporting
+• Docker
+• GitHub Actions
 
 ---
 
-##  Why This Framework?
+##  Why This Project?
 
-This project reflects real-world enterprise healthcare testing:
+This framework reflects **real enterprise healthcare testing**:
 
-* Scalable architecture
-* Clean code practices
-* Domain-driven automation
-* Continuous integration readiness
+✔ Domain-driven automation
+✔ Scalable and reusable architecture
+✔ Clean coding and best practices
+✔ Continuous integration readiness
+✔ Real-world healthcare workflows
 
----
-
+----
