@@ -36,7 +36,7 @@ const config = {
   reporter: [
     ['list'],
     ['html', { open: 'never' }],
-    ['allure-playwright']
+    ['allure-playwright', { outputFolder: 'allure-results' }]
   ],
 
   resolve: {

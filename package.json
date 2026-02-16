@@ -3,9 +3,10 @@
   "version": "1.0.0",
   "description": "Playwright-based FHIR API automation test framework",
   "main": "index.js",
-
   "scripts": {
     "test": "cross-env ENV=QA playwright test",
+    "test:bdd": "cucumber-js bdd/features --require bdd/step-definitions --format allure-cucumberjs/reporter --format-options \"{\\\"resultsDir\\\":\\\"allure-results\\\"}\"",    "test:bdd:smoke": "cucumber-js bdd/features --tags \"@smoke\" --parallel 3 --require bdd/step-definitions",
+    "test:bdd:regression": "cucumber-js bdd/features --tags \"@regression\" --parallel 2 --require bdd/step-definitions --format allure-cucumberjs/reporter",
     "test:uat": "cross-env ENV=UAT playwright test",
     "test:prod": "cross-env ENV=PROD playwright test",
     "test:headed": "playwright test --headed",
@@ -16,9 +17,9 @@
     "test:e2e": "playwright test --grep @e2e",
     "report": "playwright show-report",
     "allure:generate": "allure generate ./allure-results --clean",
-    "allure:open": "allure open"
+    "allure:open": "allure open",
+    "test:all": "npm test && npm run test:bdd"
   },
-
   "keywords": [
     "playwright",
     "fhir",
@@ -26,20 +27,19 @@
     "automation",
     "testing"
   ],
-
   "author": "Priyanka Das",
   "license": "ISC",
   "type": "commonjs",
-
   "devDependencies": {
     "@playwright/test": "^1.58.2",
     "@types/node": "^25.2.3",
     "allure-commandline": "^2.36.0",
+    "allure-cucumberjs": "^3.4.5",
     "allure-playwright": "^3.4.5",
     "cross-env": "^10.1.0"
   },
-
   "dependencies": {
+    "@cucumber/cucumber": "^12.6.0",
     "ajv": "^8.18.0",
     "allure-js-commons": "^3.4.5",
     "dotenv": "^17.3.1"
